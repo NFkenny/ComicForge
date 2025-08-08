@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, Suspense, lazy } from 'react'
+import { 
+  Routes,
+  Route,
+  Navigate
+} from 'react-router-dom'
 import './App.css'
+import MainLayout from '@/components/MainLayout'
+import BlankLayout from '@/components/BlankLayout'
+import Loading from '@/components/Loading'
 
-function App() {
-  const [count, setCount] = useState(0)
+const Home = lazy(()=>import('@/pages/Home'))
+const BookCase = lazy(()=>import('@/pages/BookCase'))
+const Square = lazy(()=>import('@/pages/Square'))
+const AIGallery = lazy(()=>import('@/pages/AIGallery'))
+const Account = lazy(()=>import('@/pages/Account'))
+const Search = lazy(()=>import('@/pages/Search'))
+
+const App = () => {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path='/' element={<Navigate to='/home' />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/bookCase' element={<BookCase />} />
+            <Route path='/square' element={<Square />} />
+            <Route path='/aiGallery' element={<AIGallery />} />
+            <Route path='/account' element={<Account />} />
+          </Route>
+          <Route element={<BlankLayout />}>
+            <Route path='/search' element={<Search />} />
+            
+          </Route>
+        </Routes>
+      </Suspense>
     </>
   )
-}
+};
 
-export default App
+export default App;
+
