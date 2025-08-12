@@ -15,6 +15,9 @@ const Square = lazy(()=>import('@/pages/Square'))
 const AIGallery = lazy(()=>import('@/pages/AIGallery'))
 const Account = lazy(()=>import('@/pages/Account'))
 const Search = lazy(()=>import('@/pages/Search'))
+const Bookmark = lazy(()=>import('@/pages/BookCase/BookmarkPage'));
+const Booklist = lazy(()=>import('@/pages/BookCase/BooklistPage'));
+const History = lazy(()=>import('@/pages/BookCase/HistoryPage'));
 
 const App = () => {
 
@@ -25,9 +28,9 @@ const App = () => {
           <Route element={<MainLayout />}>
             <Route path='/' element={<Navigate to='/home' />} />
             <Route path='/home' element={<Home />} />
-            <Route path='/bookCase' element={<BookCase />} />
+            <Route path='/bookcase' element={<BookCase />} />
             <Route path='/square' element={<Square />} />
-            <Route path='/aiGallery' element={<AIGallery />} />
+            <Route path='/aigallery' element={<AIGallery />} />
             <Route path='/account' element={<Account />} />
           </Route>
           <Route element={<BlankLayout />}>

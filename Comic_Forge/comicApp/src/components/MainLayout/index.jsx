@@ -14,7 +14,7 @@ import { Tabbar } from 'react-vant'
 import { useEffect } from 'react'
 import { FaBook } from 'react-icons/fa';
 import { MdForum } from 'react-icons/md';
-import { TbAi } from 'react-icons/tb';
+import { TbRobot } from 'react-icons/tb';
 
 const tabs = [
   {
@@ -25,7 +25,7 @@ const tabs = [
   {
     title: '书架',
     icon: <FaBook />,
-    path: '/bookCase'
+    path: '/bookcase'
   },
   {
     title: '广场',
@@ -34,8 +34,8 @@ const tabs = [
   },
   {
     title: 'AI创作',
-    icon: <TbAi />,
-    path: '/aiGallery'
+    icon: <TbRobot />,
+    path: '/aigallery'
   },
   {
     title: '我的',
@@ -55,19 +55,24 @@ const MainLayout = () => {
   }, [location.pathname])
 
   return (
-    <div className="flex flex-col h-screen bg-gray-900 text-white">
-      <Outlet />
-      <Tabbar value={active} onChange={
-        (key) => {
-          setActive(key)
-          navigate(tabs[key].path)
+    <div className="flex flex-col h-screen bg-gray-800 text-white">
+      <div className="flex-1 overflow-y-auto">
+        <Outlet />
+      </div>
+      <Tabbar 
+        className="fixed left-0 right-0 z-50 bg-gray-800 border-t border-gray-800"
+        value={active}
+        onChange={
+          (key) => {
+            setActive(key)
+            navigate(tabs[key].path)
         }}
-        className=" border-t border-gray-800"
         activeColor="#9f7aea"
         inactiveColor="#9ca3af"
+        iconSize={20}
       >
         {tabs.map((tab,index)=> (
-          <Tabbar.Item key={index} icon={tab.icon}>
+          <Tabbar.Item key={index} icon={tab.icon} className='py-2'>
             {tab.title}
           </Tabbar.Item>
         ))}

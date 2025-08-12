@@ -27,7 +27,7 @@ img {
 /* 设置默认字体和抗锯齿 */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 1.5;
   color: #333;
   background-color: #fff;
@@ -84,4 +84,32 @@ select,
 textarea {
   word-wrap: break-word;
   word-break: break-all;
+}
+
+:root {
+  .rv-tabbar {
+    background-color: #1f2937;
+    height: 1.5rem;
+  }
+  .rv-tabbar-item {
+    color: #9ca3af;
+    font-size: 0.5rem;
+  }
+  .rv-tabbar-item__icon svg {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+  .rv-tabs {
+    height: 100%
+  }
+  .rv-tabs__line {
+    height: 0.15rem;
+  }
+  .rv-tabs__wrap{
+    height: 1.5rem;
+  }
+  .rv-tab__text{
+    font-size: 0.8rem;
+  }
+  --rv-line-height-md: auto;
 }
