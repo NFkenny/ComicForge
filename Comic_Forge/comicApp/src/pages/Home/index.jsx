@@ -1,11 +1,14 @@
 import SwiperBox from "@/components/SwiperBox"
 import Recommend from "@/components/Recommend"
+import { useNavigate } from "react-router-dom"
+import SearchButton from "../../components/SearchButton"
 
 const Home = () => {
+  const navigate = useNavigate()
   return (
     <div>
       {/* 顶部导航栏 */}
-      <header className="fixed top-0 left-0 right-0 z-10 bg-gray-800 shadow-md p-2.5">
+      <header className="fixed top-0 left-0 right-0 z-10 bg-gray-800 shadow-md p-2">
         <div className="flex items-center justify-between">
           <svg
             className="w-4 h-4 text-white"
@@ -19,21 +22,7 @@ const Home = () => {
             />
           </svg>
           <h1 className="text-base font-bold">ComicForge</h1>
-          <div className="flex items-center space-x-4">
-            <button className="text-gray-300 hover:text-white">
-              <svg
-                className="w-4 h-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </button>
-          </div>
+          <SearchButton />
         </div>
       </header>
       {/* 主要内容 */}

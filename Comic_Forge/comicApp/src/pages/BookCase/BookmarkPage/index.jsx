@@ -55,11 +55,11 @@ const BookmarkPage = () => {
   return (
     <div className="w-full text-white mb-8">
       <div className="flex justify-between items-center mb-4 p-2 bg-gray-700 rounded-lg">
-        <h1 className="text-sm font-bold px-2">我的收藏</h1>
+        <h1 className="text-[8px] font-bold px-2">我的收藏</h1>
         <div className="flex items-center gap-2">
-          <span className="text-xs text-gray-300">排序方式:</span>
+          <span className="text-[6px] text-gray-300">排序方式:</span>
           <select 
-            className="bg-gray-800 text-white text-xs px-2 py-1 rounded border border-gray-600"
+            className="bg-gray-800 text-white text-[6px] px-2 py-1 rounded border border-gray-600"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
           >
@@ -81,25 +81,25 @@ const BookmarkPage = () => {
           </button>
         </div>
       ) : (
-        <div className="flex flex-wrap justify-center ">
+        <div className="grid grid-cols-2 gap-3 px-1">
           {sortedComics.map((comic) => (
             <div 
               key={comic.id}
-              className="p-1"
+              className="flex flex-col bg-gray-800 rounded-lg overflow-hidden shadow-md"
             >
-              <div className="relative h-28 w-28"> 
+              <div className="relative pb-[110%]"> 
                 <img 
                   src={comic.cover} 
                   alt={comic.title} 
-                  className="absolute inset-0 w-full h-28 object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute top-1 right-1 bg-purple-600 text-white text-xs px-1 rounded">
+                <div className="absolute top-1 right-1 bg-purple-600 text-white text-[8px] px-1 rounded">
                   {comic.progress}
                 </div>
               </div>
               <div className="p-1 flex-1 flex flex-col justify-between bg-gray-700">
-                <h3 className="font-bold text-sm truncate mb-1">{comic.title}</h3>
-                <p className="text-gray-300 text-xs line-clamp-1">最新: {comic.latestChapter}</p>
+                <h3 className="font-bold text-[8px] truncate mb-1">{comic.title}</h3>
+                <p className="text-gray-300 text-[6px] line-clamp-1">最新: {comic.latestChapter}</p>
               </div>
             </div>
           ))}

@@ -31,7 +31,7 @@ const BookCase = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="w-full">
-        <h1 className="text-xl font-bold text-center text-white mb-4">我的书架</h1>
+        <h1 className="text-base font-bold text-center text-white mb-4">我的书架</h1>
         <BookTabs 
           activeTab={activeTab} 
           onTabChange={handleTabChange} 
@@ -60,7 +60,7 @@ const BookCase = () => {
           </div>
         ) : (
           // 直接渲染对应的内容组件
-          <div className=" max-w-6xl">
+          <div className="w-[90%]">
             {renderContent()}
           </div>
         )}

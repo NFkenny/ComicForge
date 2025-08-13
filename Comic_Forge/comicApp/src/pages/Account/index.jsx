@@ -69,8 +69,8 @@ const Account = () => {
   ];
   return (
     <div className="min-h-screen bg-gray-900 text-white p-2">
-      <div className="flex justify-between items-center">
-        <div className="text-xl font-bold">账号中心
+      <div className="flex justify-between items-center pb-2">
+        <div className="text-sm font-bold">账号中心
         </div>
         <div className="text-gray-400">
           <svg
@@ -98,28 +98,29 @@ const Account = () => {
 
       </div>
       {/* 用户信息区域 */}
-      <div className="flex items-center justify-between bg-gray-800 rounded-xl p-4 mb-4 shadow-lg">
+      <div className="flex items-center justify-between bg-gray-800 rounded-xl p-3 shadow-lg">
         {/* 头像 */}
         <Image
           round
-          width="3rem"
-          height="3rem"
+          width="2rem"
+          height="2rem"
           className="cursor-pointer"
           src={userInfo.avatar}
           onClick={() => setShowActionSheet(true)}
         />
         {/* 昵称、等级、签名 */}
-        <div className="ml-3 flex-1">
-          <div className="text-sm font-bold text-white">{userInfo.nickname}</div>
-          <div className="text-xs text-purple-400 mt-1">等级: {userInfo.level}</div>
+        <div className="ml-2 flex-1">
+          <div className="text-[10px] font-bold text-white">{userInfo.nickname}</div>
+          <div className="text-[8px] text-purple-400 mt-1">等级: {userInfo.level}</div>
         </div>
       </div>
-
       {/* 功能列表区域 */}
-      <div className="mb-4">
-
+      <div className="p-2">
+        <div className="flex justify-between items-center">
+          <div className="text-[10px] font-bold">功能列表</div>
+          <div className="text-[8px] text-purple-400">查看全部</div>
+        </div>
       </div>
-
       {/* 网格按钮区域 */}
       <div className="grid grid-cols-3 gap-2 px-2 py-2 mb-4">
         {gridData.map((item, index) => (
@@ -127,8 +128,8 @@ const Account = () => {
             key={index} 
             className="flex flex-col items-center justify-center bg-gray-800 rounded-xl px-1 py-2 shadow-md hover:bg-gray-700 transition duration-300"
           >
-            <div className="text-purple-400 text-sm mb-2">{item.icon}</div>
-            <div className="text-xs text-gray-300">{item.text}</div>
+            <div className="text-purple-400 text-[8px] mb-2">{item.icon}</div>
+            <div className="text-[8px] text-gray-300">{item.text}</div>
           </div>
         ))}
       </div>

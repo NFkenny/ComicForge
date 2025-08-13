@@ -45,15 +45,15 @@ export default [
         data: [
           {
             id: "101",
-            city: "一人之下",
+            name: "一人之下",
           },
           {
             id: "102",
-            city: "海贼王",
+            name: "海贼王",
           },
           {
             id: "103",
-            city: "灵笼",
+            name: "灵笼",
           },
         ],
       };

@@ -16,7 +16,7 @@ const BookTabs = ({ activeTab, onTabChange }) => {
     <div className="w-full h-8 mb-4 bg-gray-700 p-1">
 
       <Tabs 
-        className="text-white"
+        className="text-white "
         active={tabs.findIndex(tab => tab.key === activeTab)} 
         onChange={handleTabClick} 
         color="#9f7aea"
@@ -31,13 +31,3 @@ const BookTabs = ({ activeTab, onTabChange }) => {
 };
 
 export default BookTabs;
-
-// 修改前
-// 修改前
-//
-
-// 修改前
-
-// 修改前
-
-// 修改前

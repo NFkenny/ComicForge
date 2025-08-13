@@ -34,24 +34,25 @@ const SearchBox = (props)=>{
   const displayStyle = query ? { display: 'block' } : { display: 'none' }
 
   useEffect(()=>{
-    console.log('////////',query);
     handleQueryDebounce(query);
-    
   },[query])
   // 非受控组件
   const queryRef = useRef(null)
   return (
-    <div className={styles.wrapper}>
-      <ArrowLeft onClick={() => history.go(-1) } />
+    <div className='flex items-center justify-between w-full px-1 pb-3 bg-gray-800 border-b border-gray-600'>
+      <ArrowLeft className='w-2 h-2 text-gray-300 hover:text-white transition-colors' onClick={() => window.history.go(-1)} />
       <input 
         type="text"
-        className={styles.ipt}  
+        className='text-[8px] px-2 bg-gray-700 rounded-full text-white placeholder-gray-400'
         placeholder="搜索漫画"
         ref={queryRef}
         onChange={handleChange}
       />
-      {/* 移动端用户体验 */}
-      <Close onClick={clearQuery} style={displayStyle}/>
+      <Close 
+        className='w-2 h-2 text-gray-400 hover:text-white transition-colors'
+        onClick={clearQuery} 
+        style={displayStyle}
+      />
     </div>
   )
 }

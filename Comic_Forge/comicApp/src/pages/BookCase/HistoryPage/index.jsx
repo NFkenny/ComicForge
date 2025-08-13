@@ -49,10 +49,10 @@ const HistoryPage = () => {
 
   return (
     <div className="w-full text-white mb-8">
-      <div className="flex justify-between items-center mb-6 p-2 bg-gray-700 rounded-lg">
-        <h2 className="text-sm font-bold">阅读历史</h2>
+      <div className="flex justify-between items-center mb-4 p-2 bg-gray-700 rounded-lg">
+        <h2 className="text-[8px] font-bold">阅读历史</h2>
         <button 
-          className="text-purple-400 hover:text-purple-300 text-xs"
+          className="bg-purple-600 hover:bg-purple-700 text-white text-[6px] px-3 py-1 rounded"
           onClick={() => setShowClearConfirm(true)}
         >
           清除历史
@@ -83,15 +83,11 @@ const HistoryPage = () => {
                 className="w-16 h-20 object-cover"
               />
               <div className="p-3 flex-1">
-                <h3 className="font-bold text-sm truncate">{record.title}</h3>
-                <p className="text-gray-400 text-xs mt-1">阅读至: {record.chapter}</p>
-                <p className="text-gray-500 text-xs mt-1">{record.readTime}</p>
+                <h3 className="font-bold text-[10px] truncate">{record.title}</h3>
+                <p className="text-gray-400 text-[8px] mt-1">阅读至: {record.chapter}</p>
+                <p className="text-gray-500 text-[7px] mt-1">{record.readTime}</p>
               </div>
-              <div className="p-3 text-gray-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94zm-3.564 0c0 .533.425.927 1.01.927.608 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94zm9.85 0c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
-                </svg>
-              </div>
+              
             </div>
           ))}
         </div>
@@ -101,8 +97,8 @@ const HistoryPage = () => {
       {showClearConfirm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-gray-800 rounded-lg p-4 w-full max-w-md text-center">
-            <h1 className="text-sm font-bold mb-3">确认清除</h1>
-            <p className="text-xs text-gray-300 mb-4">确定要清除所有阅读历史记录吗？</p>
+            <h1 className="text-xs font-bold mb-3">确认清除</h1>
+            <p className="text-[10px] text-gray-300 mb-4">确定要清除所有阅读历史记录吗？</p>
             <div className="flex justify-center gap-2">
               <button 
                 className="px-3 py-1 bg-gray-600 text-white rounded"

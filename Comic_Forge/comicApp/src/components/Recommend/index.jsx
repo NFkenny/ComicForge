@@ -11,9 +11,9 @@ const Recommend = () => {
     <>
       <section className="mb-8">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-sm font-bold">AI 推荐作品</h2>
+            <h2 className="text-xs font-bold">AI 推荐作品</h2>
 
-            <button className="text-xs text-purple-400">查看全部</button>
+            <button className="text-[10px] text-purple-400">查看全部</button>
           </div>
           <div className="flex overflow-x-auto pb-3 gap-3 scrollbar-hide -mx-2 px-2">
             {aiRecommendations.map((item) => (
@@ -27,8 +27,8 @@ const Recommend = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                   <div className="absolute bottom-2 left-1 right-2">
-                    <h3 className="text-white text-sm font-medium truncate">{item.title}</h3>
-                    <p className="text-gray-300 text-xs truncate">{item.prompt}</p>
+                    <h3 className="text-white text-[10px] font-medium truncate">{item.title}</h3>
+                    <p className="text-gray-300 text-[8px] truncate">{item.prompt}</p>
                   </div>
                 </div>
               </div>

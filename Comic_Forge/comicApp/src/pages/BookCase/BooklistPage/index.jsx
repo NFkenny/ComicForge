@@ -43,9 +43,9 @@ const BooklistPage = () => {
   return (
     <div className="w-full text-white mb-8">
       <div className="flex justify-between items-center p-2 bg-gray-700 rounded-lg mb-4">
-        <h2 className="text-sm font-bold">我的书单</h2>
+        <h2 className="text-[8px] font-bold">我的书单</h2>
         <button 
-          className="bg-purple-600 hover:bg-purple-700 text-white text-xs px-3 py-1 rounded"
+          className="bg-purple-600 hover:bg-purple-700 text-white text-[6px] px-3 py-1 rounded"
           onClick={() => setShowModal(true)}
         >
           创建书单
@@ -63,7 +63,7 @@ const BooklistPage = () => {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {booklists.map((list) => (
             <div 
               key={list.id}
@@ -73,14 +73,14 @@ const BooklistPage = () => {
               <img 
                 src={list.cover} 
                 alt={list.name} 
-                className="w-full h-20 object-cover"
+                className="w-full 16 h-18 object-cover"
               />
               <div className="p-1 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-sm mb-1">{list.name}</h3>
-                  <p className="text-gray-400 text-xs line-clamp-2 mb-2">{list.description}</p>
+                  <h3 className="font-bold text-[8px] mb-1">{list.name}</h3>
+                  <p className="text-gray-400 text-[6px] line-clamp-2 mb-2">{list.description}</p>
                 </div>
-                <p className="text-gray-300 text-xs">{list.comicCount} 本漫画</p>
+                <p className="text-gray-300 text-[6px]">{list.comicCount} 本漫画</p>
               </div>
             </div>
           ))}
